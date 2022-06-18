@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{name_spanish}} {% endblock title %}
+
+{% block content %}
+    <div class='berrie-info'>
+        <div>    
+            <!--Nombre de la Baya-->
+            <h2 id='name-berrie'>{{name_spanish}}.</h2>
+            <!--Imágen de la Baya-->
+            <div class='box-berrie'>
+                <div class="img-berrie"> 
+                    <img src="{{imgn_berrie}}" width='40px' height='40px'/> 
+                </div>
+            </div>
+        </div>
+
+        <div id='id-berrie'>
+            <!--Identificación de la Baya-->
+            <p id='number'><strong>Número 0{{id_}}.</strong></p>
+            <p id='ingles'><strong>Inglés:</strong> {{name_english}}.</p>
+        </div>
+
+        <div class='data-berrie'>
+            <!--Datos de la Baya-->
+            <p><strong>Efecto:</strong> {{effect_spanish}}</p>
+            <p><strong>Tamaño:</strong> {{size}}cm.</p>
+            <p><strong>Tiempo de Crecimiento:</strong> {{growth_time}}.</p>
+            <p><strong>Su cosecha máxima es de:</strong> {{max_harvest}} bayas.</p>
+            <p><strong>Dureza:</strong> {{firmness}}.</p>
+        </div>
+    </div>
+
+    <div class='box-sabor'>
+        <h3>Sabor:</h3>
+        <ul>
+            {% for flavor in flavors %}
+                <li>{% if flavor['flavor']["name"] == 'spicy' %}
+                    <strong id='spicy'>Picante</strong>
+                    {% elif flavor['flavor']["name"] == 'dry'%}
+                    <strong id='dry'>Seco</strong>
+                    {% elif flavor['flavor']["name"] == 'sweet'%}
+                    <strong id='sweet'>Dulce</strong>
+                    {% elif flavor['flavor']["name"] == 'bitter'%}
+                    <strong id='bitter'>Amargo</strong>
+                    {% elif flavor['flavor']["name"] == 'sour'%}
+                    <strong id='sour'>Ácido</strong>
+                    {% endif %} 
+                    {{flavor['potency']}}
+                </li>
+            {% endfor %}
+        </ul>
+        <p><strong>Tersura:</strong> {{smoothness}}.</p>
+    </div>
+
+    <div id='don'>
+        <h3>Don Natural</h3>
+        <p><strong>Tipo: </strong>
+            {% if gift_name_type == 'Agua' %}
+                <img src="/static/img/tipos/agua.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Fuego'%}
+                <img src="/static/img/tipos/fueo.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Planta'%}
+                <img src="/static/img/tipos/planta.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Acero'%}
+                <img src="/static/img/tipos/acero.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Siniestro'%}
+                <img src="/static/img/tipos/siniestro.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Hada'%}
+                <img src="/static/img/tipos/hada.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Tierra'%}
+                <img src="/static/img/tipos/tierra.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Fantasma'%}
+                <img src="/static/img/tipos/fantasma.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Psíquico'%}
+                <img src="/static/img/tipos/psiquico.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Lucha'%}
+                  <img src="/static/img/tipos/lucha.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Bicho'%}
+                <img src="/static/img/tipos/bicho.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Volador'%}
+                <img src="/static/img/tipos/volador.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Normal'%}
+                <img src="/static/img/tipos/normal.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Dragón'%}
+                 <img src="/static/img/tipos/dragon.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Hielo'%}
+                <img src="/static/img/tipos/hielo.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Roca'%}
+                <img src="/static/img/tipos/roca.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Veneno'%}
+                <img src="/static/img/tipos/veneno.gif" width="44px" height="18px" alt="Fantasma">
+            {% elif gift_name_type == 'Eléctrico'%}
+                <img src="/static/img/tipos/elect.gif" width="44px" height="18px" alt="Fantasma">
+            {% endif %}  
+        </p>
+
+        <p>Al ser usada con el Movimiento "Don Natural", esta baya generará un movimiento de Tipo {{gift_name_type}} con una Potencia de {{natural_gift_power}}.</p>    
+    </div>     
+{% endblock %}

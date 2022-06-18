@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{name_spanish}}{% endblock title %}
+
+{% block content %}
+    <h2 id='name-item'>{{name_spanish}}.</h2>
+
+<div class='box'>
+        <!--Imágen del Objeto/Item-->
+        <div class='box-item'>
+            <div class="img-item"> 
+                <img src="{{imgn_item}}" width='40px' height='40px'/> 
+            </div>
+        </div>
+
+        <div class='box-info'>
+            <!--Datos del Objeto/Item-->
+            <p id='number'><strong>Número 0{{id_}}.</strong></p>
+            <p id='ingles'><strong>Inglés: </strong>{{name}}.</p>
+            <p>Coste: {{cost}}<img src="/static/img/pokecuarto.png" width='10px' height='17px'/>.</p>
+        </div>
+    </div>
+    
+    <div id='desc-item'>
+        <h3>Descripción: </h3>
+        <p>{{spanish_desc}}</p>
+    </div>
+        
+    <div id='gen'>
+        <p><strong>Categoría del Objeto:</strong> {{category}}</p>
+    </div>
+
+
+{% endblock %}

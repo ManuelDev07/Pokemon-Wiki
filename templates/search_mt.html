@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %} Buscar Movimiento{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    <h1>Buscar Movimiento</h1>
+    <br>
+    <label for="mt">Movimiento:</label>
+    <input type="text" name="mt" placeholder="Nombre del Movimiento"/>
+
+    <input type='submit' value='Buscar'/>
+</form>
+<p><strong>Nota: Recuerda usar minúsculas y su nombre en inglés. Algunos Movimientos tienen mas de una palabra en su nombre, usa "-" en vez de un espacio. Ejm: mud-slap</strong></p>
+{% endblock %}

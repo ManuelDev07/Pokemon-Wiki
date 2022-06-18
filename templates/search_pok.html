@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %} Buscar Pokémon{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    <h1>Buscar Pokémon</h1>
+    <br>
+    <label for="name_id">Pokémon:</label>
+    <input type="text" name="name_id" placeholder="Nombre o el # de la Pokédex" />
+
+    <input type='submit' value='Buscar'/>
+</form>
+<p><strong>Nota: Recuerda usar minúsculas.</strong></p>
+{% endblock %}

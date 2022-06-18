@@ -1,0 +1,258 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{name}} {% endblock title %}
+
+{% block content %}
+    <div id='info-pokemon'>
+          
+        <div class='info-base2-pokemon'>
+            <p><strong>Peso:</strong> {{weight}}Kg.</p>
+
+            <p><strong>Altura:</strong> {{height}}m.</p>
+            
+            <p><strong>Color:</strong> {{color}}</p>
+            
+            <p><strong>Amistad Base:</strong> {{base_happiness}}</p>
+            
+            <p><strong>Ratio de Captura:</strong> {{ratio}}</p>
+            
+            <p><strong>Grupo de Huevo:</strong></p>   
+            <ul>   
+                {% for egg_group in egg_groups %}
+                <li> {{egg_group['name']}}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Forma:</strong> {{name_shape}}</p>
+
+            <p><strong>Categoría:</strong> {% for category in categories %}
+                    {% if category['language']['name'] == 'es' %}
+                        {{category['genus']}}
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+
+        <!--Identificación del Pokémon-->
+        <div class='info-base-pokemon'>
+            <h2> {{name}} </h2> 
+            <div>
+                {% if type1 == 'water' %}
+                    <div style="background-image: url('/static/img/fondos-tipo/water.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'fire'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/fuego.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'grass'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/planta.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'steel'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/acero.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'dark'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/siniestro.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'fairy'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/hada.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'ground'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/tierra.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'ghost'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/fantasma.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'psychic'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/psiquico.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'fighting'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/lucha.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'bug'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/bicho.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'flying'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/volador.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'normal'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/normal.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'dragon'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/dragon.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'ice'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/hielo.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'rock'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/roca.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'poison'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/veneno.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% elif type1 == 'electric'%}
+                    <div style="background-image: url('/static/img/fondos-tipo/elect.jpg')" class="img-pokemon"> 
+                        <img src="{{imgn}}" width='180px' height='180px'/> 
+                    </div>
+                {% endif %}   
+            </div>
+            
+            <p><strong>Pokédex: #0{{id_}}</strong></p>
+
+            <h3>Tipos:</h3>
+            <p id='types'>
+                {% if type1 == 'water' %}
+                    <img src="/static/img/tipos/agua.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'fire'%}
+                    <img src="/static/img/tipos/fueo.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'grass'%}
+                    <img src="/static/img/tipos/planta.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'steel'%}
+                    <img src="/static/img/tipos/acero.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'dark'%}
+                    <img src="/static/img/tipos/siniestro.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'fairy'%}
+                    <img src="/static/img/tipos/hada.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'ground'%}
+                    <img src="/static/img/tipos/tierra.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'ghost'%}
+                    <img src="/static/img/tipos/fantasma.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'psychic'%}
+                    <img src="/static/img/tipos/psiquico.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'fighting'%}
+                      <img src="/static/img/tipos/lucha.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'bug'%}
+                    <img src="/static/img/tipos/bicho.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'flying'%}
+                    <img src="/static/img/tipos/volador.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'normal'%}
+                    <img src="/static/img/tipos/normal.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'dragon'%}
+                     <img src="/static/img/tipos/dragon.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'ice'%}
+                    <img src="/static/img/tipos/hielo.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'rock'%}
+                    <img src="/static/img/tipos/roca.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'poison'%}
+                    <img src="/static/img/tipos/veneno.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type1 == 'electric'%}
+                    <img src="/static/img/tipos/elect.gif" width="44px" height="18px" alt="Fantasma">
+                {% endif %}  
+            </p>
+
+            <p id='types'>
+                {% if type2 == 'water' %}
+                    <img src="/static/img/tipos/agua.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'fire'%}
+                    <img src="/static/img/tipos/fueo.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'grass'%}
+                    <img src="/static/img/tipos/planta.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'steel'%}
+                    <img src="/static/img/tipos/acero.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'dark'%}
+                    <img src="/static/img/tipos/siniestro.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'fairy'%}
+                    <img src="/static/img/tipos/hada.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'ground'%}
+                    <img src="/static/img/tipos/tierra.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'ghost'%}
+                    <img src="/static/img/tipos/fantasma.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'psychic'%}
+                    <img src="/static/img/tipos/psiquico.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'fighting'%}
+                      <img src="/static/img/tipos/lucha.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'bug'%}
+                    <img src="/static/img/tipos/bicho.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'flying'%}
+                    <img src="/static/img/tipos/volador.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'normal'%}
+                    <img src="/static/img/tipos/normal.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'dragon'%}
+                     <img src="/static/img/tipos/dragon.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'ice'%}
+                    <img src="/static/img/tipos/hielo.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'rock'%}
+                    <img src="/static/img/tipos/roca.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'poison'%}
+                    <img src="/static/img/tipos/veneno.gif" width="44px" height="18px" alt="Fantasma">
+                {% elif type2 == 'electric'%}
+                    <img src="/static/img/tipos/elect.gif" width="44px" height="18px" alt="Fantasma">
+                {% else %}
+                    {{type2}}.    
+                {% endif %}  
+            </p>
+            
+        </div>
+
+        <div class='info-stats-pokemon'>
+            <h3>Estadísticas Base:</h3>
+            <ul>
+            {% for stat in stats %}
+                <li><strong>{{stat['stat']['name']}}:</strong> {{stat['base_stat']}}.</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+    <div class='abilitie-box'>
+        <h3>Habilidades:</h3>
+        <ul>
+        {% for abilitie in abilities %}
+            <li>Nombre: {{abilitie['ability']['name']}}.</li>
+            
+            {% if abilitie['is_hidden'] == True %}
+                <p>Habilidad <strong>Oculta</strong>👁‍🗨</p>
+            {% else %}
+                <p>Habilidad Normal</p>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div id='gen'>
+        <!--Cuando fue creado el Pokémon-->
+        <p><strong>Generación de Origen: 
+            {% if gen == 'generation-i' %}
+                I (Kanto)
+            {% elif gen == 'generation-ii' %}
+                II (Johto)
+            {% elif gen == 'generation-iii' %}
+                III (Hoenn)
+            {% elif gen == 'generation-iv' %}
+                IV (Sinnoh)
+            {% elif gen == 'generation-v' %}
+                V (Unova/Teselia)
+            {% elif gen == 'generation-vi' %}
+                VI (Kalos)
+            {% elif gen == 'generation-vii' %}
+                VII (Alola)
+            {% else %}
+                VIII (Galar)
+            {% endif %}
+        </strong></p>
+    </div>
+
+    <div id='entries'>
+        <h3>Estas son las entradas de la Pokédex conocidas de {{name}}:</h3>
+            {% for description in descriptions %}
+                {% if description['language']['name'] == 'es' %}
+                    <br><strong>Versión del Juego {{description['version']['name']}}:</strong> {{description['flavor_text']}}<br>
+                {% endif %}
+            {% endfor %}
+    </div>
+{% endblock %}

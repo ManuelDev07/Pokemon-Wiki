@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/static/img/pokeball.png" />   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <title> Wiki Pokémon |{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+    <div class='top'>
+        <img id='left' width='50px' height="50px" src="/static/img/pokeball.png" alt="pokéball">
+        <img id='right' width='50px' height="50px" src="/static/img/pokeball.png" alt="pokéball">
+        <h1>Wiki Pokémon Usando <a href='https://pokeapi.co/' target='_blank'>PokeAPI.co</a></h1>
+    </div>
+
+    <div class='menu'> 
+        <ul>
+            <li><a href='/WELCOME'>Inicio</a></li>
+            <li><a href='{{url_for("search_pokemon")}}'>Buscar Pokémon</a></li>
+            <li><a href='{{url_for("search_abilitie")}}'>Habilidades</a></li>
+            <li><a href='{{url_for("search_mt")}}'>Movimientos</a></li>
+            <li><a href='{{url_for("search_item")}}'>Objetos</a></li>
+            <li><a href='{{url_for("search_berrie")}}'>Bayas</a></li>
+        </ul>
+    </div>
+
+    <div class='content'>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>Built and Designed by Manuel Bayona &copy;.</p>
+        <p>Created in 06/14/2022.</p>
+    </footer>
+
+</body>
+</html>

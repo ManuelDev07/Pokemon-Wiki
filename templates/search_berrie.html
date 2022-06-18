@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %} Buscar Bayas{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    <h1>Buscar Bayas</h1>
+    <br>
+    <label for="berrie">Baya:</label>
+    <input type="text" name="berrie" placeholder="Nombre de la Baya"/>
+
+    <input type='submit' value='Buscar'/>
+</form>
+<p><strong>Nota: Recuerda usar minúsculas y su nombre en inglés.</strong></p>
+{% endblock %}

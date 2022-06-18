@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{name_spanish}} {% endblock title %}
+
+{% block content %}
+    <!--Datos de la Habilidad-->
+    <div class='info-abilitie'>    
+        <h2>Habilidad {{name_spanish}}.</h2>
+        <p id='number'><strong>Número 0{{id_}}.</strong></p>
+        <p id='ingles'><strong>Inglés:</strong> {{name}}.</p>
+        <p><strong>Efecto:</strong> {{effect_spanish}}</p>
+    </div>
+
+    <div id='gen'>
+        <!--Cuando fue creado la Habilidad-->
+        <p><strong>Generación de Origen: 
+            {% if gen == 'generation-iii' %}
+                III (Hoenn)
+            {% elif gen == 'generation-iv' %}
+                IV (Sinnoh)
+            {% elif gen == 'generation-v' %}
+                V (Unova/Teselia)
+            {% elif gen == 'generation-vi' %}
+                VI (Kalos)
+            {% elif gen == 'generation-vii' %}
+                VII (Alola)
+            {% else %}
+                VIII (Galar)
+            {% endif %}
+        </strong></p>
+    </div>
+
+    <!--Pokémon con la Habilidad-->
+    <h3 id='h3-ab'>Pokémon con {{name_spanish}}:</h3>  
+
+    <div class='ab-norm'>
+        <h4>Como Habilidad Normal:</h4>
+        <ul class='ab-list'> 
+            {% for pokemon in pok_ab %}
+                {% if pokemon['is_hidden'] == False %}
+                    <li> <strong>|</strong> {{pokemon['pokemon']['name']}} <strong>|</strong> </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class='ab-hidden'>
+        <h4>Como Habilidad Oculta:</h4>
+        <ul class='ab-list'> 
+            {% for pokemon in pok_ab %}
+                {% if pokemon['is_hidden'] == True %}
+                    <li> <strong>|</strong> {{pokemon['pokemon']['name']}} <strong>|</strong> </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{name_spanish}}{% endblock title %}
+
+{% block content %}
+    <div class='info-mt'>
+        <!--Datos de la MT/MO-->
+        <div class='basic-info'>
+            <h2>{{name_spanish}}.</h2>
+            <p><strong>Tipo:</strong>
+                        {% if type_attack == 'Agua' %}
+                            <img src="/static/img/tipos/agua.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Fuego'%}
+                            <img src="/static/img/tipos/fueo.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Planta'%}
+                            <img src="/static/img/tipos/planta.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Acero'%}
+                            <img src="/static/img/tipos/acero.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Siniestro'%}
+                            <img src="/static/img/tipos/siniestro.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Hada'%}
+                            <img src="/static/img/tipos/hada.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Tierra'%}
+                            <img src="/static/img/tipos/tierra.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Fantasma'%}
+                            <img src="/static/img/tipos/fantasma.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Psíquico'%}
+                            <img src="/static/img/tipos/psiquico.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Lucha'%}
+                              <img src="/static/img/tipos/lucha.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Bicho'%}
+                            <img src="/static/img/tipos/bicho.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Volador'%}
+                            <img src="/static/img/tipos/volador.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Normal'%}
+                            <img src="/static/img/tipos/normal.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Dragón'%}
+                             <img src="/static/img/tipos/dragon.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Hielo'%}
+                            <img src="/static/img/tipos/hielo.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Roca'%}
+                            <img src="/static/img/tipos/roca.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Veneno'%}
+                            <img src="/static/img/tipos/veneno.gif" width="44px" height="18px" alt="Fantasma">
+                        {% elif type_attack == 'Eléctrico'%}
+                            <img src="/static/img/tipos/elect.gif" width="44px" height="18px" alt="Fantasma">
+                        {% endif %}  
+            </p>
+            <p><strong>Descripción:</strong> {{desc_spanish}}</p>
+        </div>
+
+        <div class='basic3-info'>
+            <div id='potencia'> 
+                <p id='col3'><strong>Potencia:</strong> {{power}}.</p>
+            </div>
+
+            <div id='presc'> 
+                <p id='col3'><strong>Precisión:</strong> {{accuracy}}.</p>
+            </div>
+
+            <div id='pp'> 
+                <p id='col3'><strong>PP:</strong> {{pp}}.</p>
+            </div id='tipo'>
+
+            <div id='clase'> 
+                <p id='col3'><strong>Clase:</strong>
+                    {% if  dmg_cls == 'physical' %}
+                        <img src="/static/img/clase/fisico.gif" width="41px" height="18px" alt="Físico">
+                    {% elif dmg_cls == 'special'%}
+                        <img src="/static/img/clase/especial.gif" width="41px" height="18px" alt="Especial">
+                    {% elif dmg_cls== 'status'%}
+                        <img src="/static/img/clase/estado.gif" width="41px" height="18px" alt="Estado">
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+
+        <div class='basic2-info'>
+            <p id='number'><strong>Número 0{{id_}}.</strong></p>
+            <p id='ingles'><strong>Inglés: </strong>{{name}}.</p>
+        </div>    
+
+    </div>    
+
+    <div id='gen'>
+        <!--Cuando fue creado el Movimiento-->
+        <p><strong>Generación de Origen: 
+            {% if gen == 'generation-iii' %}
+                III (Hoenn)
+            {% elif gen == 'generation-iv' %}
+                IV (Sinnoh)
+            {% elif gen == 'generation-v' %}
+                V (Unova/Teselia)
+            {% elif gen == 'generation-vi' %}
+                VI (Kalos)
+            {% elif gen == 'generation-vii' %}
+                VII (Alola)
+            {% else %}
+                VIII (Galar)
+            {% endif %}
+        </strong></p>
+    </div>
+
+    <div id='pk-list'>    
+        <h3>Pokémon que pueden aprender {{name_spanish}}:</h3>
+        <ul>
+            {% for pokemon in learned_by %}
+                <li> <strong>|</strong> {{pokemon['name']}} <strong>|</strong> </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id='concurso'>
+        {% if x != None or y != None or z != None or m != None %}
+        <div id='concurso-info'> 
+            <div id='concurso-info-base'>       
+                <h2>Concursos</h2>
+                <p><strong>Efectos Concurso Normal:</strong> {{effect_normal}}</p>
+                <p><strong>Efectos Súper Concurso:</strong> {{effect_super}}</p>
+                </p>
+            </div>
+
+            <div id='concurso-exhibicion'>
+                <p><strong>Tipo:</strong>
+                    {% if type == 'cool' %}
+                        <img src="/static/img/exhibicion/carisma.gif" width="49px" height="18px">
+                    {% elif type == 'beauty' %}
+                        <img src="/static/img/exhibicion/belleza.gif" width="49px" height="18px">
+                    {% elif type == 'cute'%}
+                        <img src="/static/img/exhibicion/dulzura.gif" width="49px" height="18px">
+                    {% elif type == 'smart' %}
+                        <img src="/static/img/exhibicion/ingenio.gif" width="49px" height="18px">
+                    {% elif type == 'tough' %}
+                        <img src="/static/img/exhibicion/dureza.gif" width="49px" height="18px">
+                    {% endif %}
+                <p><strong>Exhibición:</strong> +{{appeal_normal}}💖.</p>
+                <p><strong>Inhibición:</strong> -{{jam_normal}}🖤.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class='combos'>
+            <div class='combos-normal'>
+                <h3>Combos Concursos Normales:</h3>
+                <p><i>Para antes:</i></p>
+                <ul>
+                    {% if before_normal != '' %}
+                        {% for attack in before_normal %}
+                            <li>{{attack['name']}}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No tiene Combo para Antes del Ataque</li>
+                    {% endif %}
+                </ul>
+
+                <p><i>Para Después:</i></p>
+                <ul>
+                    {% if after_normal != '' %}
+                        {% for attack in after_normal %}
+                            <li>{{attack['name']}}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No tiene Combo para Después del Ataque</li>
+                    {% endif %}
+                </ul>        
+            </div>
+
+            <div class='combos-super'>
+
+                <h3>Combos Súper Concursos:</h3>
+                <p><i>Para antes:</i></p>
+                <ul>
+                    {% if before_super != '' %}
+                        {% for attack in before_super %}
+                            <li>{{attack['name']}}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No tiene Combo para Antes del Ataque</li>
+                    {% endif %}
+                </ul>
+
+                <p><i>Para Después:</i></p>
+                <ul>
+                    {% if after_super != '' %}
+                        {% for attack in after_super %}
+                            <li>{{attack['name']}}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No tiene Combo para Después del Ataque</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+        {% else %}
+            Este Ataque no está en concursos.
+        {% endif %}
+
+{% endblock %}

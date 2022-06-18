@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %} Buscar Objeto{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    <h1>Buscar Objeto</h1>
+    <br>
+    <label for="item">Objeto:</label>
+    <input type="text" name="item" placeholder="Nombre del Objeto/Item" />
+
+    <input type='submit' value='Buscar'/>
+</form>
+<p><strong>Nota: Recuerda usar minúsculas y su nombre en inglés. Algunos objetos tienen mas de una palabra en su nombre, usa "-" en vez de un espacio. Ejm: water-stone</strong></p>
+{% endblock %}

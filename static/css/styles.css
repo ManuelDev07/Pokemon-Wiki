@@ -1,0 +1,571 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Anek Malayalam', sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(204, 204, 204);
+}
+
+/*Header*/
+.top{
+    background-color: rgba(19, 19, 19, 1);
+    color: white;
+    padding: 12px 0 18px 0;
+    text-align: center;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+}
+/*---------------------------------*/
+
+/*Menú*/
+.menu ul{
+    background-color:rgb(43, 43, 43);
+    height: 45px;
+}
+
+.menu li {
+    padding-top: 8px;
+    list-style: none;
+    float: left;
+    position:relative;
+    padding-left: 5px;
+    margin-right: 25px;
+}
+
+.menu a {
+    margin-left: 12px;
+    padding: 3px;
+    border-radius: 12px;
+}
+
+.menu a:hover {
+    background-color: rgb(255, 255, 255);
+    color:#000000;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 25px 1px black;
+}
+/*---------------------------------*/
+
+/*Content*/
+.content {
+    background-color: lightgray;
+    margin: 50px 100px 25px 100px;
+    padding: 50px;
+    border-radius: 9px;
+    box-shadow: 0px 0px 7px 0px rgb(20, 20, 20);
+}
+
+.content h1{
+    padding-left: 25px;
+    margin-bottom: 9px;
+}
+
+#gen{
+    background-color: rgba(19, 19, 19, 1);
+    color: white;
+    width: 50%;
+    padding: 12px;
+    border-radius: 9px;
+    margin-left: 20%;
+    margin-top: 7px;
+}
+
+h2{
+    margin-bottom: 7px;
+}
+/*---------------------------------*/
+
+/*Páginas de Búsqueda*/
+input[type='text']{
+    padding: 7px;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    border-color: #000000;
+    border-width: 2px;
+}
+
+input[type='text']:focus{
+    outline: none;
+}
+
+input[type='text']:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+input[type="submit"] {
+    padding: 12px;
+    border: none;
+    border-radius: 17px;
+    background-color: rgba(19, 19, 19, 1);
+    color: #ffffff;
+}
+ 
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+}
+/*---------------------------------*/
+
+/*Habilidad*/
+.info-abilitie{
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 7px 20px 7px 20px;
+    border-radius: 9px;
+    width: 50%;
+    margin-left: 17.8%;
+}
+
+#ingles{
+    grid-column: 2;
+    grid-row: 2;
+    text-align: end;
+    margin-left: 7px;
+}
+
+#number{
+    grid-column: 2;
+    text-align: end;
+    grid-row: 1;
+}
+
+.info-abilitie p{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#h3-ab{
+    padding: 25px 25px 0 10px;
+    margin-left: 45px;
+}
+
+h4{
+    padding: 9px;
+}
+
+.ab-norm {
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 7px 20px 7px 20px;
+    border-radius: 9px;
+    display:flex;
+}
+
+.ab-hidden {
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 19px 20px 7px 20px;
+    border-radius: 9px;
+    display:flex;
+}
+
+.ab-list ul{
+    padding: 0;
+    margin: 15px 0;
+}
+
+.ab-list li{
+    display: inline;
+    float: left;
+    margin: 6px;
+    padding: 2px;
+}
+/*---------------------------------*/
+
+/*Movimientos*/
+.info-mt{
+    display: grid;
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 7px auto;
+    border-radius: 9px;
+    width: 50%;
+    margin-left: 17.8%;
+}
+
+.basic-info{
+    grid-column: 1;
+}
+
+.basic2-info{
+    grid-column: 3;
+    margin-left: 5px;
+    line-height: 19px;
+}
+
+.basic3-info{
+    grid-column: 2;
+    margin-right: 18px;
+    margin-left: 9px;
+    line-height: 25px;
+}
+
+#pk-list{
+    display: flex;
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    border-radius: 9px;
+}
+
+#pk-list h3{
+    margin: 9px;
+    margin-left: 25px;
+}
+
+#pk-list ul{
+    padding: 0;
+    margin: 15px 0;
+}
+
+#pk-list li{
+    display: inline;
+    float: left;
+    margin: 6px;
+    padding: 2px;
+}
+
+#concurso-box{
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    width: 50%;
+    margin: 12px auto;
+    border-radius: 9px; 
+}
+
+#concurso-info{
+    display: grid;
+    background-color: whitesmoke;
+    padding: 25px;
+    border-radius: 9px;
+}
+
+#concurso-info-base{
+    grid-column: 1;
+}
+
+#concurso-exhibicion{
+    grid-column: 2;
+}
+
+.combos{
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    width: 51%;
+    border-radius: 9px; 
+    display: grid;
+}
+
+.combos-normal{
+    grid-column: 1;
+    margin-left: 20px
+}
+
+.combos-normal li{
+    margin-left: 27px;
+}
+
+.combos-super{
+    grid-column: 2;
+}
+
+.combos-super li{
+    margin-left: 27px;
+}
+
+/*---------------------------------*/
+
+/*Título Objetos y Bayas*/
+#name-item{
+text-align: center;}
+
+.box{
+    display: grid;
+}
+
+.box-item{
+    grid-column: 1;
+    background-color: whitesmoke;   
+    width:40px;
+    height:40px;
+    border-radius:150px;
+    margin-left: 80%;
+    margin-top: 30px;
+    box-shadow: inset 0px 0px 3px 0px rgb(20, 20, 20);
+}
+
+.box-info{
+    grid-column: 2;
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px 40px 12px 25px;
+    border-radius: 9px; 
+    width: 30%;
+}
+
+#desc-item{
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    border-radius: 9px;
+    width: 80%;
+}
+/*---------------------------------*/
+
+/*Bayas*/
+.berrie-info{
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    width: 51%;
+    border-radius: 9px; 
+    display: grid;
+}
+
+.box-berrie{
+    background-color: lightgray;   
+    width:43px;
+    height:43px;
+    margin-left: 35px;
+    border-radius:150px;
+    box-shadow: inset 0px 0px 3px 0px rgb(20, 20, 20);
+}
+
+#id-berrie{
+    grid-column: 2;
+    text-align: end;
+}
+
+.data-berrie{
+    margin-top: 18px;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.box-sabor{
+    display: grid;
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    border-radius: 9px; 
+    width: 60%;
+}
+
+.box-sabor h3{
+    margin: 12px;   
+    grid-row: 1; 
+    grid-column: 1;
+}
+
+.box-sabor ul{
+    margin-left: auto;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.box-sabor li{
+    list-style: none;
+    float: left;
+    margin-right: 25px
+}
+
+#spicy{
+    background-color: rgb(255, 41, 41);
+    padding: 4px;
+    border-radius: 9px;
+}
+
+#dry{
+    background-color: #6890f0;
+    padding: 4px;
+    border-radius: 9px;
+}
+#sweet{
+    background-color: rgb(252, 42, 77);
+    padding: 4px;
+    border-radius: 9px;
+}
+#bitter{
+    background-color: #78c850;
+    padding: 4px;
+    border-radius: 9px;
+}
+#sour{
+    background-color: yellow;
+    padding: 4px;
+    border-radius: 9px;
+}
+
+.box-sabor p{
+    grid-row: 3;
+    grid-column: 2;
+    margin-left: 15px;
+}
+
+#don{
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    border-radius: 9px; 
+}
+
+/*---------------------------------*/
+
+/*Pokémon*/
+.img-pokemon{
+    background-color: lightgray;   
+    width:200px;
+    height:200px;
+    overflow: hidden;
+    border-radius:150px;
+    box-shadow: inset 0px 0px 7px 0px rgb(20, 20, 20);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.img-pokemon img{
+    margin: 5%;
+}
+
+#info-pokemon{
+    background-color: whitesmoke;
+    padding: 30px 25px 30px 80px;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-bottom: 5%;
+    border-radius: 9px; 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: auto;    
+}
+
+#info-pokemon li{
+    list-style: none;
+    padding-left: 12px;
+    padding-bottom: 3px;
+}
+
+.info-base2-pokemon{
+    grid-column: 1;
+    padding: 12px;
+    background-color: lightgray; 
+    border-radius: 9px;
+    box-shadow: inset 0px 0px 3px 0px rgb(20, 20, 20);
+    margin-right: 15px;
+}
+
+.info-base-pokemon{
+    grid-column: 2;
+    padding-top: 0;
+}
+
+.info-base-pokemon h2{
+    text-align: center;
+}
+
+.info-stats-pokemon{
+    background-color: lightgray; 
+    padding: 12px;
+    padding-top: 0px;
+    border-radius: 9px;
+    box-shadow: inset 0px 0px 3px 0px rgb(20, 20, 20);
+    grid-column: 3;
+    margin-left: 0px;
+    margin-right: 30px;
+    height: 73%;
+}
+
+
+.info-base2-pokemon p{
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.info-stats-pokemon h3{
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+#types{
+    display: inline;
+}
+
+.abilitie-box{
+    background-color: rgba(19, 19, 19, 1);
+    color: white;
+    width: 50%;
+    padding: 25px;
+    border-radius: 9px;
+    margin-left: 18.5%;
+    margin-top: 3px;
+}
+
+.abilitie-box li{
+    list-style: none;
+    padding-top: 9px;
+    padding-left: 9px;
+}
+
+#entries{
+    background-color: whitesmoke;
+    padding: 15px 30px 15px 30px;
+    margin: 12px auto;
+    border-radius: 9px; 
+}
+#entries p{
+    padding: 9px;
+}
+
+/*---------------------------------*/
+
+/*FOOTER*/
+footer {
+    color: white;
+    background-color: rgba(19, 19, 19, 1);
+    box-shadow: 0px 0px 3px 0px rgb(20, 20, 20); 
+    text-align: center;
+    width: 22%;
+    margin-left: 40%;
+    margin-bottom: 6px;
+    padding: 9px;
+    border-radius: 12px;
+}
+/*---------------------------------*/
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    background-color: rgba(19, 19, 19, 1);
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(36, 36, 36);
+    border-radius: 20px;
+    border-right: 2px transparent;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(59, 59, 59);
+}
+/*---------------------------------*/
